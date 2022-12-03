@@ -44,11 +44,10 @@ footer{
 // footer{
 //     border: solid 4px blue;
 // }
-// #AddComponents{
-//     // position: absolute;
-//     //     top: 0;
-//     // width: 100%;
-// }
+#AddComponents{
+    display: flex;
+        flex-direction: column;
+}
 .contenu{
     min-height: 100vh;
     // border: solid pink 3px;
