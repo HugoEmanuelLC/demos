@@ -29,15 +29,24 @@
 
 <body>
 
-    <div class="ukiyo" style="background-image: url(https://i.pinimg.com/736x/51/7b/07/517b07bfac2232980597368f36fc06c5.jpg);"></div>
+    <img class="image" data-u-scale="2"
+    data-u-speed="1.7"
+    data-u-wrapper-class="wrapper-name"
+    data-u-willchange 
+    src="https://i.pinimg.com/736x/51/7b/07/517b07bfac2232980597368f36fc06c5.jpg" 
+    alt="">
+
+    
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
     <script type="text/javascript">
         import Ukiyo from "ukiyojs";
+        const image = document.querySelector('.image');
+        const instance = new Ukiyo(image);
 
-        const parallax = document.querySelector('.ukiyo');
+        const parallax = document.querySelector('.image');
 
         new Ukiyo(parallax, {
             scale: 1.5, // 1~2 is recommended
@@ -45,6 +54,7 @@
             willChange: true, // This may not be valid in all cases
             wrapperClass: "ukiyo-wrapper"
         })
+        instance.reset();
     </script>
 </body>
 
