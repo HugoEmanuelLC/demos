@@ -54,7 +54,7 @@ footer{
     // border: solid pink 3px;
 }
 
-.imageDeFond{
+.box_slide_image_simple{
     height: 80vh;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@ footer{
     background-attachment: fixed;
 }
 
-.boxDivs_images div{
+.box_slide_images div{
     height: 80vh;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -147,11 +147,11 @@ footer{
 
 
 @media (min-width: 801px) {
-    .imageDeFond{
+    .box_slide_image_simple{
         background-position: center;
         background-size: contain;
     }
-    .boxDivs_images div{
+    .box_slide_images div{
         background-position: center;
         background-size: contain;
     }
