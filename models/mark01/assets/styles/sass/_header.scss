@@ -33,6 +33,9 @@ header .link_social a{
     padding: 5px;
     margin: 5px;
 }
+header .link_social a:hover{
+    background-color: var(--txt_color);
+}
 header .link_social a i{
     color: var(--txt_color_dark_1);
 }
