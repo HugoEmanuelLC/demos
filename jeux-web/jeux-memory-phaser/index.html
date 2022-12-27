@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Memory</title>
+    <style>
+        body{
+            background-image: -ms-linear-gradient(left, #FFFFFF, #00A3EF);
+            background-image: -moz-linear-gradient(left, #FFFFFF, #00A3EF);
+            background-image: -o-linear-gradient(left, #FFFFFF, #00A3EF);
+            background-image: -webkit-linear-gradient(left, #FFFFFF, #00A3EF);
+        }
+        img{
+            margin-right: 5px;
+            height: 170px;
+            width: 170px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script>
+      var i,j,k;
+      var nombre_retourne = 0; // Nombre de cartes retournées
+      var memo_carte = ''; // Mémorisation du nom de la carte précédente
+      var memo_position = 0; // Mémorisation de la position de la carte précédente 
+      var visible = new Array(0,0,0,0,0,0,0,0,0,0,0,0); // Indique si les cartes sont visibles (1) ou retournées (0, valeur par défaut)
+
+      function affiche_image(src, id, name) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.id = id;
+        img.name = name;
+        document.body.appendChild(img);
+        img.onclick = function() {
+          if (nombre_retourne==2) 
+            $('#non')[0].play();
+          else {
+            nombre_retourne++;
+            document.getElementById(id).src = name;
+            $('#oui')[0].play();
+            if (memo_carte == name) {  // Deux cartes identiques retournées
+                $('#bravo')[0].play();
+                nombre_retourne=0;
+                visible[memo_position-1] = 1;
+                visible[id-1] = 1;
+            }
+            else {
+                memo_carte = name;
+                memo_position = id;
+                setTimeout(function() {if (visible[id-1]==0) {document.getElementById(id).src = 'dos.jpg'; nombre_retourne--;} if (nombre_retourne==0) memo_carte='';}, 1000);
+            }
+          }    
+        }
+     }
+    </script>
+</head>
+
+
+
+<body>
+
+    <h1>Memory - Evaluez votre mémoire</h1>
+
+    <audio preload="auto" id="oui">
+        <source src="oui.mp3" type="audio/mp3">
+    </audio>
+
+    <audio preload="auto" id="superbravo">
+        <source src="superbravo.mp3" type="audio/mp3">
+    </audio>
+
+    <audio preload="auto" id="bravo">
+        <source src="bravo.mp3" type="audio/mp3">
+    </audio>
+
+    <audio preload="auto" id="non">
+        <source src="non.mp3" type="audio/mp3">
+    </audio>
+    
+    <script>
+        var init = '123456654321';
+      var cartes = init.split('').sort(function(){return 0.5-Math.random()}).join('');
+      for (i=1;i<4;i++) {
+        for (j=1;j<5;j++) {
+            k = (i-1)*4 + j - 1;
+            affiche_image('dos.jpg', k + 1, cartes.charAt(k) + '.jpg');
+        }
+        document.write('<br>');
+      }
+    </script>
+</body>
+</html>
