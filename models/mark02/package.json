@@ -1,0 +1,15 @@
+{
+  "name": "mark02",
+  "version": "1.0.0",
+  "description": "model mark02",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./assets/styles/main.scss:./assets/styles/css/style.css --style compressed"
+  },
+  "keywords": [
+    "siteweb"
+  ],
+  "author": "Hugo L. Clavinas",
+  "license": "ISC"
+}
