@@ -1,6 +1,7 @@
 :root{
     --color_light_gray: rgb(230, 230, 230);
     --shadow: 4px 4px 5px rgb(0, 0, 0, 0.5);
+    --opo_a: rgba(255, 255, 255, 0.5);
 }
 *{
     margin: 0;
@@ -17,17 +18,11 @@ body{
 #page{
     display: flex;
         flex-direction: column;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     background-color: var(--color_light_gray);
     border-radius: 20px;
     padding: 5px;
-    min-height: 98vh;
-}
-header{
-    // border: solid 2px red;
-    display: flex;
-    height: 75vh; 
-    z-index: 0;
+    min-height: 100vh;
 }
 .nav{
     // border: 3px solid blu100
@@ -40,10 +35,9 @@ header{
     padding: 4px;
     display: flex;
         flex-direction: column;
-    overflow-x: scroll;
     a{
         // border: solid black 2px;
-    background-color: var(--color_light_gray);
+    background-color: var(--opo_a);
         color: black;
         padding: 3px 15px;
         margin: 5px;
@@ -56,16 +50,21 @@ header{
     }
 }
 .intitule{
-    flex: 1;
     // border: solid green 4px;
-    // height: 100%;
+    background-color: blue;
+    color: white;
+    height: 80vh;
     // width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+        top: 0;
     display: flex;
     flex-direction: column;
         justify-content: center;
         align-items: center;
     font-size: 5em;
     text-shadow: var(--shadow);
+    overflow: hidden;
 }
 @media screen AND (max-width: 800px) {
     .nav{
