@@ -1,0 +1,8 @@
+--------------------ANGULAR
+---terminal
+	ng serve
+
+
+--------------------NODE JS
+---terminal
+	npm start
