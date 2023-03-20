@@ -1,9 +1,14 @@
 
 
-<h2>Collection</h2>
+<h2>Collection > {{ nomCollection }}</h2>
 
-<div *ngFor="let collection of collections">
-    <h3>
-        {{ collection.name }}
-    </h3>
+<div *ngFor="let produit of produits">
+    <div>
+    
+        <img src='{{ produit.img }}' alt="">
+        <h3> {{ produit.name }} </h3>
+        <button type="button" [title]="produit.name + ', List de la produit '" routerLink="{{ produit.id }}">Voir le produit</button>
+        <button type="button" [title]="produit.name + ', List de la produit '" routerLink="{{ produit.id }}">Ajouter au panier</button>
+
+    </div>
 </div>

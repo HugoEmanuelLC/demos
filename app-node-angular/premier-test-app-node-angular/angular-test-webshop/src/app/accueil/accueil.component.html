@@ -1,6 +1,6 @@
 <p>accueil works!</p>
 
-<h2>Collection</h2>
+<h2>Collections</h2>
 
 <div *ngFor="let collection of collections">
     <div>
@@ -8,8 +8,8 @@
     
         <p>{{ collection.description }}</p>
     
-        <img src='{{ collection.img_coll }}' alt="">
-
-        <a routerLink="coll/{{ collection.id }}">Voir la collection</a>
+        <img src='{{ collection.img }}' alt="">
+        <br>
+        <button type="button" [title]="collection.name + ', List de la collection '" routerLink="collection/{{ collection.id }}">Voir la collection</button>
     </div>
 </div>

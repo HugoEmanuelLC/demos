@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 // import { ActivatedRoute } from '@angular/router';
-import { collections } from '../data-collection';
+import { collections } from '../data-collections';
 
 @Component({
   selector: 'app-accueil',
@@ -10,13 +10,10 @@ import { collections } from '../data-collection';
 export class AccueilComponent {
 
   collections = collections;
-
   // constructor(private route: ActivatedRoute){}
 
-  // ngOnInit(){
-  //   this.route.params.subscribe(params => {
-  //     console.log(params["id"]);
-  //   })
-  // }
+  ngOnInit(){
+    console.log(this.collections)
+  }
 
 }

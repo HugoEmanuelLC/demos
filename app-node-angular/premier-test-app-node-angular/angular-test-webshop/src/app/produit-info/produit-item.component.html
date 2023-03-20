@@ -1,0 +1,11 @@
+<p>produit-item works!</p>
+
+<div *ngFor="let produit of produits">
+    <div>
+        <a routerLink="../">retour</a>
+        <h3> {{ produit.name }} </h3>
+        <p>{{ produit.description }}</p>
+    
+        <img src='{{ produit.img }}' alt="">
+    </div>
+</div>
