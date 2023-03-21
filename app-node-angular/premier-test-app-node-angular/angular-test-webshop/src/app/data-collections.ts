@@ -13,6 +13,8 @@ export interface Produit {
   price: number;
   FK_id_collection: number;
 }
+
+export const idProduits = <any>[]
   
 export const collections = [
   {
