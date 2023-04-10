@@ -1,0 +1,12 @@
+{
+  "name": "dashboard",
+  "version": "2.0.0",
+  "description": "Panel de configuration des sites et apps web de base (modele)",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./public/assets/styles/main.scss:./public/assets/styles/css/style.css --style compressed"
+  },
+  "author": "hugo clavinas",
+  "license": "ISC"
+}

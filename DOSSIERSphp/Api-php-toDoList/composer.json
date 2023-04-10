@@ -1,0 +1,19 @@
+{
+    "name": "hc-dev/dashboard",
+    "description": "Panel de configuration des sites et apps web de base (model)",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "HcDev\\Dashboard\\": "src/",
+            "App\\": "app/",
+            "Router\\": "router/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hugo clavinas",
+            "email": "helc85.info@gmail.com"
+        }
+    ],
+    "require": {}
+}
