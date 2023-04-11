@@ -31,7 +31,7 @@ $route = new Routes($_GET['url']);
 
 //SITE WEB
 $route->get('/list', 'App\api\controllers\ControllerApi@listToDo');
-// $route->get('/menu/:i', 'App\api\controllers\ControllerApi@listProduits');
+$route->post('/new/:id', 'App\api\controllers\ControllerApi@insertNewItem');
 // $route->get('/home', 'App\controllers\siteWeb\ControllerSw@homePageSw');
 // $route->get('/menu/:params', 'App\controllers\siteWeb\ControllerSw@produitsMenu');
 // $route->get('/facebook', 'App\controllers\siteWeb\ControllerSw@facebook');

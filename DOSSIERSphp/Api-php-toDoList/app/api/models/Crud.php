@@ -37,12 +37,14 @@ class Crud
     }
 
     public function insertNewItem($title, $date, $until, $done, $description, $fk){
+        // if ($fk) {
+            
+        // }
         try {
             
-            $newItem = "INSERT INTO `produits`(`ID`, `nom`, `PRIX`, `COMMENTAIRE`, `menu_id`) 
-                        VALUES ('','$title','$date','$until','$done','$description','$fk');";
-            $itemsListNew = $this->connDB()->query($newItem);
-            // return $itemsMenuNew;
+            $newItem = "INSERT INTO `todolist`(`title`, `date`, `until`,`done`,`description`, `fk_id_user`) 
+                        VALUES ('$title','$date','$until','$done','$description','$fk');";
+            return $this->connDB()->query($newItem);
 
         }catch(Exception $e){
             die('Erreur : '.$e->getMessage());

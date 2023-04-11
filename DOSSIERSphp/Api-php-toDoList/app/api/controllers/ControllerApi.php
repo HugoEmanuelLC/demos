@@ -13,6 +13,28 @@ class ControllerApi
         return $list;
     }
 
+    public function insertNewItem($id){
+        $req = new Crud();
+
+        $title = $_POST["title"];
+        $date = $_POST['date'];
+        $until = $_POST['until'];
+        $done = $_POST["done"];
+        $description = $_POST["description"];
+
+        // $title = "HUGO";
+        // $date = '2023-04-10';
+        // $until = '2023-10-10';
+        // $done = "false";
+        // $description = "description test";
+
+        $datas = $req->insertNewItem($title, $date, $until, $done, $description, $id);
+
+        return $datas;
+
+        print_r(" --> ".$id);
+    }
+
     // public function listProduits(int $i){
     //     $req = new Selects();
     //     $listMenus = $req->selectProduits($i);
